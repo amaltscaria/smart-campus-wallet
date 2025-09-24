@@ -41,27 +41,27 @@ const MockupCarousel = () => {
   if (mockups.length === 0) return null;
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">{mockups[currentIndex]?.title || "UniVerse App"}</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+    <section className="py-8 md:py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">{mockups[currentIndex]?.title || "UniVerse App"}</h2>
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
             {mockups[currentIndex]?.subtitle || "Experience the future of student financial management"}
           </p>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
           {/* Carousel Container */}
-          <div className="flex items-center justify-center min-h-[500px] overflow-visible">
+          <div className="flex items-center justify-center min-h-[300px] md:min-h-[500px] overflow-visible">
 
             {mockups.length === 1 ? (
               // Single mockup display
               <div className="relative">
-                <div className="bg-white rounded-3xl shadow-2xl px-1 py-6 transform hover:scale-105 transition-transform duration-300">
+                <div className="bg-white rounded-3xl px-1 py-6 transform hover:scale-105 transition-transform duration-300">
                   <img
                     src={mockups[0].image}
                     alt={mockups[0].alt}
-                    className="w-64 h-auto rounded-2xl max-h-[450px] object-contain"
+                    className="w-32 md:w-64 h-auto rounded-2xl max-h-[200px] md:max-h-[450px] object-contain"
                   />
                 </div>
               </div>
@@ -69,8 +69,8 @@ const MockupCarousel = () => {
               // Multiple mockups carousel
               <div className="relative w-full flex items-center justify-center overflow-visible">
                 {/* Gradient fade overlays */}
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-blue-50 to-transparent z-30 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-blue-50 to-transparent z-30 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-30 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-30 pointer-events-none"></div>
 
                 {mockups.map((mockup, index) => {
                   const isActive = index === currentIndex;
@@ -82,26 +82,26 @@ const MockupCarousel = () => {
 
                   let transform = 'translateX(0px) scale(1)';
                   let opacity = 1;
-                  let zIndex = 10;
+                  let zIndex = 5;
                   let filter = 'blur(0px)';
 
                   if (isPrev) {
                     // 1 o'clock position: right and slightly down (previous item goes clockwise)
                     transform = 'translateX(300px) translateY(50px) scale(0.75) rotate(15deg)';
                     opacity = 0.7;
-                    zIndex = 5;
+                    zIndex = 2;
                     filter = 'blur(0px)';
                   } else if (isNext) {
                     // 11 o'clock position: left and slightly down (next item comes from left)
                     transform = 'translateX(-300px) translateY(50px) scale(0.75) rotate(-15deg)';
                     opacity = 0.7;
-                    zIndex = 5;
+                    zIndex = 2;
                     filter = 'blur(0px)';
                   } else if (isActive) {
                     // 12 o'clock position: center top
                     transform = 'translateX(0px) translateY(-50px) scale(1)';
                     opacity = 1;
-                    zIndex = 10;
+                    zIndex = 5;
                     filter = 'blur(0px)';
                   }
 
@@ -110,7 +110,10 @@ const MockupCarousel = () => {
                       key={mockup.id}
                       className="absolute transition-all duration-1000 ease-out"
                       style={{
-                        transform,
+                        transform: window.innerWidth <= 768 ?
+                          (isPrev ? 'translateX(150px) translateY(25px) scale(0.75) rotate(10deg)' :
+                           isNext ? 'translateX(-150px) translateY(25px) scale(0.75) rotate(-10deg)' :
+                           'translateX(0px) translateY(-25px) scale(1)') : transform,
                         opacity,
                         zIndex,
                         filter,
@@ -120,11 +123,7 @@ const MockupCarousel = () => {
                       <img
                         src={mockup.image}
                         alt={mockup.alt}
-                        className={`w-64 h-auto rounded-2xl max-h-[450px] object-contain ${
-                          isActive
-                            ? 'drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]'
-                            : 'drop-shadow-[0_10px_15px_rgba(0,0,0,0.15)]'
-                        }`}
+                        className="w-32 md:w-64 h-auto rounded-2xl max-h-[200px] md:max-h-[450px] object-contain"
                       />
                     </div>
                   );

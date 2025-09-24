@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+/* Mobile scroll fixes */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Prevent scroll jumping on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile viewport fixes */
+@media (max-width: 768px) {
+  html, body {
+    height: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* Fix mobile carousel positioning */
+  .mockup-carousel {
+    touch-action: pan-y;
+  }
+}

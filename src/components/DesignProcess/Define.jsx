@@ -171,9 +171,14 @@ const Define = () => {
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h4 className="text-xl font-semibold mb-6 text-left">{povSlides[currentPovSlide].title}</h4>
 
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-1200 ease-in-out ${isPovTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="relative group transition-all duration-1200 ease-in-out">
-            <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-1200 ease-in-out">
+        <div className={`transition-all duration-1200 ease-in-out ${isPovTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="mb-6 h-[100px] flex items-start">
+            <p className="text-gray-700 text-left">
+              {povSlides[currentPovSlide].description}
+            </p>
+          </div>
+          <div className="relative group">
+            <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg">
               <img
                 src={povSlides[currentPovSlide].image}
                 alt={povSlides[currentPovSlide].alt}
@@ -191,11 +196,6 @@ const Define = () => {
                 </svg>
               </div>
             </div>
-          </div>
-          <div className="transition-all duration-1200 ease-in-out flex flex-col justify-center">
-            <p className="text-gray-700 mb-4 text-left transition-all duration-1200 ease-in-out">
-              {povSlides[currentPovSlide].description}
-            </p>
           </div>
         </div>
 

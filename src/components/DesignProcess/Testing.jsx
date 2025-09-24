@@ -45,7 +45,7 @@ const Testing = () => {
       <h3 className="text-2xl font-bold mb-6 text-center">Testing</h3>
       
       {/* Guerrilla Testing */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
         <h4 className="text-xl font-semibold mb-4">Guerrilla Testing</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="relative group">
@@ -97,7 +97,7 @@ const Testing = () => {
       </div>
       
       {/* Testing Results */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
         <h4 className="text-xl font-semibold mb-4">Testing Results</h4>
         <p className="text-gray-700 mb-6">
           The testing phase revealed several key insights that informed further iterations of the design.
@@ -140,7 +140,7 @@ const Testing = () => {
       </div>
       
       {/* Design Iteration */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
         <h4 className="text-xl font-semibold mb-4">Design Iteration</h4>
         <p className="text-gray-700 mb-6">
           Based on testing feedback, I made several iterations to the design to address user pain points

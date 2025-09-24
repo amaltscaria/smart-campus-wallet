@@ -15,7 +15,7 @@ const ProjectIntro = () => {
         <h2 className="text-3xl font-bold mb-10 text-center">Project Introduction</h2>
         
         {/* Introduction Section */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-12 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
           <div className="md:flex">
             <div className="md:w-1/2 relative group">
               <div className="h-[600px] flex items-center justify-center bg-transparent rounded-lg p-4">
@@ -59,7 +59,7 @@ const ProjectIntro = () => {
         </div>
         
         {/* Context of Use Section */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
           <div className="p-8">
             <h3 className="text-2xl font-bold mb-4">Context of Use</h3>
             <div className="mb-6">
