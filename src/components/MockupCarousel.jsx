@@ -127,7 +127,8 @@ const MockupCarousel = () => {
                         alt={mockup.alt}
                         width={256}
                         height={512}
-                        priority={isActive || isPrev || isNext}
+                        priority={isActive}
+                        loading={isActive ? "eager" : (isPrev || isNext ? "eager" : "lazy")}
                         className="w-32 md:w-64 h-auto rounded-2xl max-h-[200px] md:max-h-[450px] object-contain"
                       />
                     </div>
