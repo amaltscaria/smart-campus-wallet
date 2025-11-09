@@ -22,6 +22,12 @@ const MockupCarousel = () => {
 
   useEffect(() => {
     setIsMounted(true);
+
+    // Preload all carousel images
+    mockups.forEach((mockup) => {
+      const img = new Image();
+      img.src = mockup.image;
+    });
   }, []);
 
   useEffect(() => {
