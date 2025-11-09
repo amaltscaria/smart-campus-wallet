@@ -2,20 +2,19 @@
 
 // src/components/MockupCarousel.jsx
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 const MockupCarousel = () => {
   // Repeating the same mockup to demonstrate carousel effect
   const mockups = [
-    { id: 1, image: "/images/mockup/1.png", alt: "UniVerse App - Welcome", title: "Welcome to UniVerse", subtitle: "Your Smart Campus Wallet" },
-    { id: 2, image: "/images/mockup/2.png", alt: "UniVerse App - Campus Wallet", title: "Your Campus Wallet", subtitle: "All in One Place" },
-    { id: 3, image: "/images/mockup/3.png", alt: "UniVerse App - Smart Spending", title: "Smart Spending", subtitle: "Transparent Tracking" },
-    { id: 4, image: "/images/mockup/4.png", alt: "UniVerse App - Monthly Tracking", title: "Track & Analyse", subtitle: "Take Control of Your Monthly Spending" },
-    { id: 5, image: "/images/mockup/5.png", alt: "UniVerse App - Student Deals", title: "Exclusive Student Deals", subtitle: "Save more every day" },
-    { id: 6, image: "/images/mockup/6.png", alt: "UniVerse App - Subscription Management", title: "Never Forget Subscriptions", subtitle: "Track, manage, and stay ahead" },
-    { id: 7, image: "/images/mockup/7.png", alt: "UniVerse App - Bank Connection", title: "Connect Your Bank", subtitle: "Unlock student-only rewards" },
-    { id: 8, image: "/images/mockup/8.png", alt: "UniVerse App - Promo Codes", title: "Student Promo Codes", subtitle: "Claim exclusive codes and save instantly" },
-    { id: 9, image: "/images/mockup/9.png", alt: "UniVerse App - Fund Transfers", title: "Seamless Transfers", subtitle: "Move Funds to Your UniVerse Wallet in Seconds" },
+    { id: 1, image: "/images/mockup/1.jpeg", alt: "UniVerse App - Welcome", title: "Welcome to UniVerse", subtitle: "Your Smart Campus Wallet" },
+    { id: 2, image: "/images/mockup/2.jpeg", alt: "UniVerse App - Campus Wallet", title: "Your Campus Wallet", subtitle: "All in One Place" },
+    { id: 3, image: "/images/mockup/3.jpeg", alt: "UniVerse App - Smart Spending", title: "Smart Spending", subtitle: "Transparent Tracking" },
+    { id: 4, image: "/images/mockup/4.jpeg", alt: "UniVerse App - Monthly Tracking", title: "Track & Analyse", subtitle: "Take Control of Your Monthly Spending" },
+    { id: 5, image: "/images/mockup/5.jpeg", alt: "UniVerse App - Student Deals", title: "Exclusive Student Deals", subtitle: "Save more every day" },
+    { id: 6, image: "/images/mockup/6.jpeg", alt: "UniVerse App - Subscription Management", title: "Never Forget Subscriptions", subtitle: "Track, manage, and stay ahead" },
+    { id: 7, image: "/images/mockup/7.jpeg", alt: "UniVerse App - Bank Connection", title: "Connect Your Bank", subtitle: "Unlock student-only rewards" },
+    { id: 8, image: "/images/mockup/8.jpeg", alt: "UniVerse App - Promo Codes", title: "Student Promo Codes", subtitle: "Claim exclusive codes and save instantly" },
+    { id: 9, image: "/images/mockup/9.jpeg", alt: "UniVerse App - Fund Transfers", title: "Seamless Transfers", subtitle: "Move Funds to Your UniVerse Wallet in Seconds" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,12 +56,9 @@ const MockupCarousel = () => {
               // Single mockup display
               <div className="relative">
                 <div className="bg-white rounded-3xl px-1 py-6 transform hover:scale-105 transition-transform duration-300">
-                  <Image
+                  <img
                     src={mockups[0].image}
                     alt={mockups[0].alt}
-                    width={256}
-                    height={512}
-                    priority
                     className="w-32 md:w-64 h-auto rounded-2xl max-h-[200px] md:max-h-[450px] object-contain"
                   />
                 </div>
@@ -122,13 +118,9 @@ const MockupCarousel = () => {
                         transformStyle: 'preserve-3d',
                       }}
                     >
-                      <Image
+                      <img
                         src={mockup.image}
                         alt={mockup.alt}
-                        width={256}
-                        height={512}
-                        priority={isActive}
-                        loading={isActive ? "eager" : (isPrev || isNext ? "eager" : "lazy")}
                         className="w-32 md:w-64 h-auto rounded-2xl max-h-[200px] md:max-h-[450px] object-contain"
                       />
                     </div>
