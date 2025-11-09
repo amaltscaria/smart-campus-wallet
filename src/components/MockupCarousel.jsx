@@ -2,6 +2,7 @@
 
 // src/components/MockupCarousel.jsx
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const MockupCarousel = () => {
   // Repeating the same mockup to demonstrate carousel effect
@@ -56,9 +57,12 @@ const MockupCarousel = () => {
               // Single mockup display
               <div className="relative">
                 <div className="bg-white rounded-3xl px-1 py-6 transform hover:scale-105 transition-transform duration-300">
-                  <img
+                  <Image
                     src={mockups[0].image}
                     alt={mockups[0].alt}
+                    width={256}
+                    height={512}
+                    priority
                     className="w-32 md:w-64 h-auto rounded-2xl max-h-[200px] md:max-h-[450px] object-contain"
                   />
                 </div>
@@ -118,9 +122,12 @@ const MockupCarousel = () => {
                         transformStyle: 'preserve-3d',
                       }}
                     >
-                      <img
+                      <Image
                         src={mockup.image}
                         alt={mockup.alt}
+                        width={256}
+                        height={512}
+                        priority={isActive || isPrev || isNext}
                         className="w-32 md:w-64 h-auto rounded-2xl max-h-[200px] md:max-h-[450px] object-contain"
                       />
                     </div>
