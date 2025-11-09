@@ -1,3 +1,5 @@
+'use client';
+
 // src/components/TechnologyUsed.jsx
 import React from 'react';
 
@@ -36,9 +38,9 @@ const TechnologyUsed = () => {
   ];
   
   return (
-    <section id="tech" className="py-20 bg-gray-50">
+    <section id="tech" className="py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-10 text-center">Technology Used</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center text-white">Technology Used</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {technologies.map((tech, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-6 flex items-start">

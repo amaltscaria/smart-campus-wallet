@@ -1,9 +1,7 @@
+'use client';
+
 // src/components/DesignProcess/Prototype.jsx
 import React, { useState, useEffect } from 'react';
-import designSystemImage from '../../assets/images/prototype/16.1Design System.png';
-import screenshotImage from '../../assets/images/prototype/16-screenshot.png';
-import designPrinciplesImage from '../../assets/images/new/6.Design Principles.jpg';
-import lowWireframeImage from '../../assets/images/new/10.Low wireframe.jpg';
 
 const Prototype = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -13,7 +11,7 @@ const Prototype = () => {
   const wireframeSlides = [
     {
       id: 1,
-      image: lowWireframeImage,
+      image: "/images/new/10.Low wireframe.jpg",
       title: "Low-Fidelity Wireframes",
       alt: "Low-Fidelity Wireframes",
       layout: "text-left",
@@ -21,7 +19,7 @@ const Prototype = () => {
     },
     {
       id: 2,
-      image: screenshotImage,
+      image: "/images/prototype/16-screenshot.png",
       title: "Wireframes and Mockups",
       alt: "Wireframes and Mockups",
       layout: "text-left",
@@ -51,7 +49,7 @@ const Prototype = () => {
 
   return (
     <div className="mb-16">
-      <h3 className="text-2xl font-bold mb-6 text-center">Prototype</h3>
+      <h3 className="text-2xl font-bold mb-6 text-center text-white">Prototype</h3>
 
       {/* Design Principles */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -60,10 +58,10 @@ const Prototype = () => {
           <div className="relative group">
             <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg">
               <img
-                src={designPrinciplesImage}
+                src="/images/new/6.Design Principles.jpg"
                 alt="Design Principles"
                 className="rounded-lg shadow-sm max-w-full max-h-full object-contain cursor-pointer hover:scale-105 transition-all duration-1200 ease-in-out"
-                onClick={() => setSelectedImage({ src: designPrinciplesImage, alt: "Design Principles" })}
+                onClick={() => setSelectedImage({ src: "/images/new/6.Design Principles.jpg", alt: "Design Principles" })}
               />
             </div>
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
@@ -106,10 +104,10 @@ const Prototype = () => {
           <div className="relative group">
             <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg">
               <img
-                src={designSystemImage}
+                src="/images/prototype/16.1Design System.png"
                 alt="Design System"
                 className="rounded-lg shadow-sm max-w-full max-h-full object-contain cursor-pointer hover:scale-105 transition-all duration-1200 ease-in-out"
-                onClick={() => setSelectedImage({ src: designSystemImage, alt: "Design System" })}
+                onClick={() => setSelectedImage({ src: "/images/prototype/16.1Design System.png", alt: "Design System" })}
               />
             </div>
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">

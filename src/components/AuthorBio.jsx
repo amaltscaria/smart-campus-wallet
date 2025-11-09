@@ -1,23 +1,24 @@
+'use client';
+
 // src/components/AuthorBio.jsx
 import React, { useState } from "react";
 
-import profile from "../assets/images/aruntscaria.png";
 
 const AuthorBio = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-10 text-center">About Me</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center text-white">About Me</h2>
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/3 mb-6 md:mb-0">
             <div className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-lg bg-gray-300 flex items-center justify-center relative group">
-              {/* Replace with your profile image */}
+              {/* Replace with your "/images/aruntscaria.png" image */}
               <img
-                src={profile}
+                src="/images/aruntscaria.png"
                 alt="Arun Tharappel Scaria"
                 className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-all duration-300"
-                onClick={() => setSelectedImage({ src: profile, alt: "Arun Tharappel Scaria" })}
+                onClick={() => setSelectedImage({ src: "/images/aruntscaria.png", alt: "Arun Tharappel Scaria" })}
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = "https://placehold.co/300x300?text=Arun";

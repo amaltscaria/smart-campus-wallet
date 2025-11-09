@@ -1,7 +1,7 @@
+'use client';
+
 // src/components/ProblemSpace.jsx
 import React, { useState, useEffect } from 'react';
-import mindMapImage from '../assets/images/new/7. Mind map.jpg';
-import visualAbstractImage from '../assets/images/new/8. Visual Abstarct.jpg';
 
 const ProblemSpace = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -11,14 +11,14 @@ const ProblemSpace = () => {
   const problemSpaceSlides = [
     {
       id: 1,
-      image: mindMapImage,
+      image: "/images/new/7. Mind map.jpg",
       title: "Mind Map",
       alt: "Problem Space Mind Map",
       description: "This mind map sets the stage by illustrating the interconnected problems around student financial struggles, discount discovery, and campus payment complexity. It outlines key domains like budgeting, subscriptions, and tech integration which shaped the problem space."
     },
     {
       id: 2,
-      image: visualAbstractImage,
+      image: "/images/new/8. Visual Abstarct.jpg",
       title: "Visual Abstract",
       alt: "Visual Abstract",
       description: "This visual abstract uses metaphorical sketches to quickly convey the emotional and practical struggles students face with fragmented financial tools. It anchors the narrative and orients readers to the real-world friction before diving into the UX process."

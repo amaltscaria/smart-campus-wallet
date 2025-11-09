@@ -1,7 +1,7 @@
+'use client';
+
 // src/components/ProjectAim.jsx
 import React, { useState, useEffect } from 'react';
-import ganttChartImage from '../assets/images/planning/Gan chart.jpg';
-import trelloBoardImage from '../assets/images/planning/Trelloboard.png';
 
 const ProjectAim = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -11,14 +11,14 @@ const ProjectAim = () => {
   const timelineSlides = [
     {
       id: 1,
-      image: ganttChartImage,
+      image: "/images/planning/Gan chart.jpg",
       title: "Project Timeline",
       alt: "Project Gantt Chart",
       description: "To ensure effective project management and timely delivery, I developed a comprehensive Gantt chart outlining all major phases and deliverables."
     },
     {
       id: 2,
-      image: trelloBoardImage,
+      image: "/images/planning/Trelloboard.png",
       title: "Project Management",
       alt: "Trello Project Board",
       description: "To keep track of tasks, milestones, and progress throughout the project, I used Trello as a project management tool. This allowed me to organize my workflow and ensure all aspects of the design process were properly addressed."
@@ -39,9 +39,9 @@ const ProjectAim = () => {
     return () => clearInterval(interval);
   }, [timelineSlides.length]);
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-10 text-center">Project Aim</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center text-white">Project Aim</h2>
         
         <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
           <p className="text-gray-700 mb-6">
@@ -73,17 +73,9 @@ const ProjectAim = () => {
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h3 className="text-xl font-bold mb-6 text-left">{timelineSlides[currentSlide].title}</h3>
 
-          <div className={`transition-all duration-1200 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-            {/* Single row layout with content */}
-            <div className="mb-6 h-[100px] flex items-start">
-              <p className="text-gray-700 text-left">
-                {timelineSlides[currentSlide].description}
-              </p>
-            </div>
-
-            {/* Image below */}
-            <div className="relative group">
-              <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-1200 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+            <div className="relative group transition-all duration-1200 ease-in-out">
+              <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-1200 ease-in-out">
                 <img
                   src={timelineSlides[currentSlide].image}
                   alt={timelineSlides[currentSlide].alt}
@@ -101,6 +93,11 @@ const ProjectAim = () => {
                   </svg>
                 </div>
               </div>
+            </div>
+            <div className="transition-all duration-1200 ease-in-out flex flex-col justify-center">
+              <p className="text-gray-700 mb-4 text-left transition-all duration-1200 ease-in-out">
+                {timelineSlides[currentSlide].description}
+              </p>
             </div>
           </div>
 

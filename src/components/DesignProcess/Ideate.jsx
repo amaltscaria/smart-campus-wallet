@@ -1,13 +1,14 @@
+'use client';
+
 // src/components/DesignProcess/Ideate.jsx
 import React, { useState } from 'react';
-import nufTestImage from '../../assets/images/new/4.nuf test results.jpg';
 
 const Ideate = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div className="mb-16">
-      <h3 className="text-2xl font-bold mb-6 text-center">Ideate</h3>
+      <h3 className="text-2xl font-bold mb-6 text-center text-white">Ideate</h3>
 
       {/* NUF Test Results Table */}
       <div className="bg-white rounded-lg shadow-md p-6">
@@ -16,10 +17,10 @@ const Ideate = () => {
           <div className="relative group">
             <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg">
               <img
-                src={nufTestImage}
+                src="/images/new/4.nuf test results.jpg"
                 alt="NUF Test Results Table"
                 className="rounded-lg shadow-sm max-w-full max-h-full object-contain cursor-pointer hover:scale-105 transition-all duration-1200 ease-in-out"
-                onClick={() => setSelectedImage({ src: nufTestImage, alt: "NUF Test Results Table" })}
+                onClick={() => setSelectedImage({ src: "/images/new/4.nuf test results.jpg", alt: "NUF Test Results Table" })}
               />
             </div>
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">

@@ -1,14 +1,7 @@
+'use client';
+
 // src/components/DesignProcess/Define.jsx
 import React, { useState, useEffect } from 'react';
-import personaImage1 from '../../assets/images/define/Protopersona 1.png';
-import personaImage2 from '../../assets/images/define/B.Protopersona 2.png';
-import empathyMapImage from '../../assets/images/define/Empathy map 1.png';
-import journeyMapImage from '../../assets/images/define/Customer Journey Map .jpg';
-import storyboardImage from '../../assets/images/define/Story Board.png';
-import povImage from '../../assets/images/new/1.Point of view sattement.jpg';
-import userStoryImage from '../../assets/images/new/2.User story.jpg';
-import hmwImage from '../../assets/images/new/3.HMW.jpg';
-import hmwInsightsImage from '../../assets/images/new/Arun Tharappel Scaria - Frame 4.jpg';
 
 const Define = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -24,13 +17,13 @@ const Define = () => {
   const personas = [
     {
       id: 1,
-      image: personaImage1,
+      image: "/images/define/Protopersona 1.png",
       name: "Stephin Thomas",
       description: "An international student in France who forgets subscription renewals and misses student deals. Needs one app to manage payments, offers, and subscriptions."
     },
     {
       id: 2,
-      image: personaImage2,
+      image: "/images/define/B.Protopersona 2.png",
       name: "Emily Carter",
       description: "A student in London who overspends and misses discounts. Wants simple tools to track spending, manage subscriptions, and get timely reminders."
     }
@@ -39,7 +32,7 @@ const Define = () => {
   const mapSlides = [
     {
       id: 1,
-      image: empathyMapImage,
+      image: "/images/define/Empathy map 1.png",
       title: "Empathy Map",
       alt: "Empathy Map",
       description: "To develop a deeper understanding of user motivations, behaviours, and frustrations, an empathy map was constructed based on patterns identified during semi-structured interviews.",
@@ -48,7 +41,7 @@ const Define = () => {
     },
     {
       id: 2,
-      image: journeyMapImage,
+      image: "/images/define/Customer Journey Map .jpg",
       title: "Customer Journey Map",
       alt: "Customer Journey Map",
       description: "A journey map was developed to track user interactions from problem awareness to final solution adoption.",
@@ -73,14 +66,14 @@ const Define = () => {
   const povSlides = [
     {
       id: 1,
-      image: povImage,
+      image: "/images/new/1.Point of view sattement.jpg",
       title: "Point of View Statements",
       alt: "Point of View Statements",
       description: "This image translates the affinity insights into two clear Point of View (POV) statements for Stephin and Emily. It sets the foundation for ideation by highlighting their key frustrations and motivations."
     },
     {
       id: 2,
-      image: userStoryImage,
+      image: "/images/new/2.User story.jpg",
       title: "User Stories",
       alt: "User Stories",
       description: "User stories derived from each POV help define the product features from a user's perspective. This image captures goals related to payments, subscriptions, and budget tracking in everyday student life."
@@ -90,14 +83,14 @@ const Define = () => {
   const hmwSlides = [
     {
       id: 1,
-      image: hmwImage,
+      image: "/images/new/3.HMW.jpg",
       title: "HMW + Brainstormed Ideas",
       alt: "HMW and Brainstormed Ideas",
       description: "This image shows the core HMW (How Might We) questions with sticky-note ideation below. It represents divergent thinking used to explore multiple directions for solving the core issues."
     },
     {
       id: 2,
-      image: hmwInsightsImage,
+      image: "/images/new/Arun Tharappel Scaria - Frame 4.jpg",
       title: "Turning Insights into HMW Questions",
       alt: "Turning Insights into HMW Questions",
       description: "Key HMW questions derived from user insights:",
@@ -165,20 +158,15 @@ const Define = () => {
 
   return (
     <div className="mb-16">
-      <h3 className="text-2xl font-bold mb-6 text-center">Define</h3>
+      <h3 className="text-2xl font-bold mb-6 text-center text-white">Define</h3>
 
       {/* POV & User Stories Carousel */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h4 className="text-xl font-semibold mb-6 text-left">{povSlides[currentPovSlide].title}</h4>
 
-        <div className={`transition-all duration-1200 ease-in-out ${isPovTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="mb-6 h-[100px] flex items-start">
-            <p className="text-gray-700 text-left">
-              {povSlides[currentPovSlide].description}
-            </p>
-          </div>
-          <div className="relative group">
-            <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg">
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-1200 ease-in-out ${isPovTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="relative group transition-all duration-1200 ease-in-out">
+            <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg transition-all duration-1200 ease-in-out">
               <img
                 src={povSlides[currentPovSlide].image}
                 alt={povSlides[currentPovSlide].alt}
@@ -196,6 +184,11 @@ const Define = () => {
                 </svg>
               </div>
             </div>
+          </div>
+          <div className="transition-all duration-1200 ease-in-out flex flex-col justify-center">
+            <p className="text-gray-700 mb-4 text-left transition-all duration-1200 ease-in-out">
+              {povSlides[currentPovSlide].description}
+            </p>
           </div>
         </div>
 
@@ -225,10 +218,10 @@ const Define = () => {
           </div>
           <div className="relative group">
             <img
-              src={hmwImage}
+              src="/images/new/3.HMW.jpg"
               alt="HMW and Brainstormed Ideas"
               className="rounded-lg shadow-sm w-full h-auto cursor-pointer hover:scale-105 transition-all duration-300"
-              onClick={() => setSelectedImage({ src: hmwImage, alt: "HMW and Brainstormed Ideas" })}
+              onClick={() => setSelectedImage({ src: "/images/new/3.HMW.jpg", alt: "HMW and Brainstormed Ideas" })}
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
               <div className="w-10 h-10 bg-white rounded flex items-center justify-center shadow-md">
@@ -251,10 +244,10 @@ const Define = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="relative group">
             <img
-              src={hmwInsightsImage}
+              src="/images/new/Arun Tharappel Scaria - Frame 4.jpg"
               alt="Turning Insights into HMW Questions"
               className="rounded-lg shadow-sm w-full h-auto cursor-pointer hover:scale-105 transition-all duration-300"
-              onClick={() => setSelectedImage({ src: hmwInsightsImage, alt: "Turning Insights into HMW Questions" })}
+              onClick={() => setSelectedImage({ src: "/images/new/Arun Tharappel Scaria - Frame 4.jpg", alt: "Turning Insights into HMW Questions" })}
             />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
               <div className="w-10 h-10 bg-white rounded flex items-center justify-center shadow-md">

@@ -1,7 +1,7 @@
+'use client';
+
 // src/components/ProjectIntro.jsx
 import React, { useState } from 'react';
-import introImage from '../assets/images/planning/Introduction.jpg';
-import contextImage from '../assets/images/planning/Context of Use.jpg';
 
 const ProjectIntro = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -12,18 +12,18 @@ const ProjectIntro = () => {
   return (
     <section id="project" className="py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-10 text-center">Project Introduction</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center text-white">Project Introduction</h2>
         
         {/* Introduction Section */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-12 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
           <div className="md:flex">
             <div className="md:w-1/2 relative group">
               <div className="h-[600px] flex items-center justify-center bg-transparent rounded-lg p-4">
                 <img
-                  src={introImage}
+                  src="/images/planning/Introduction.jpg"
                   alt="Project Introduction"
                   className="rounded-lg shadow-sm max-w-full max-h-full object-contain cursor-pointer hover:scale-105 transition-all duration-1200 ease-in-out"
-                  onClick={() => setSelectedImage({ src: introImage, alt: "Project Introduction" })}
+                  onClick={() => setSelectedImage({ src: "/images/planning/Introduction.jpg", alt: "Project Introduction" })}
                 />
               </div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
@@ -31,8 +31,7 @@ const ProjectIntro = () => {
                   <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
                     <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
                     <path d="M21 8V5a2 2 0 0 0-2-2h-3"/>
-                    <path d="M3 16v3a2 2 0 0 0 2 2h3"/>
-                    <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
+                    <path d="M3 16v3a2 2 0 0 0 2-2v-3"/>
                   </svg>
                 </div>
               </div>
@@ -59,7 +58,7 @@ const ProjectIntro = () => {
         </div>
         
         {/* Context of Use Section */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="p-8">
             <h3 className="text-2xl font-bold mb-4">Context of Use</h3>
             <div className="mb-6">
@@ -103,10 +102,10 @@ const ProjectIntro = () => {
             <div className="relative group">
               <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg">
                 <img
-                  src={contextImage}
+                  src="/images/planning/Context of Use.jpg"
                   alt="Context of Use"
                   className="rounded-lg shadow-sm max-w-full max-h-full object-contain cursor-pointer hover:scale-105 transition-all duration-1200 ease-in-out"
-                  onClick={() => setSelectedImage({ src: contextImage, alt: "Context of Use" })}
+                  onClick={() => setSelectedImage({ src: "/images/planning/Context of Use.jpg", alt: "Context of Use" })}
                 />
               </div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">

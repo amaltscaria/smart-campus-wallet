@@ -1,30 +1,28 @@
+'use client';
+
 // src/components/MockupCarousel.jsx
 import React, { useState, useEffect } from 'react';
-import mockup1 from '../assets/images/mockup/1.png';
-import mockup2 from '../assets/images/mockup/2.png';
-import mockup3 from '../assets/images/mockup/3.png';
-import mockup4 from '../assets/images/mockup/4.png';
-import mockup5 from '../assets/images/mockup/5.png';
-import mockup6 from '../assets/images/mockup/6.png';
-import mockup7 from '../assets/images/mockup/7.png';
-import mockup8 from '../assets/images/mockup/8.png';
-import mockup9 from '../assets/images/mockup/9.png';
 
 const MockupCarousel = () => {
   // Repeating the same mockup to demonstrate carousel effect
   const mockups = [
-    { id: 1, image: mockup1, alt: "UniVerse App - Welcome", title: "Welcome to UniVerse", subtitle: "Your Smart Campus Wallet" },
-    { id: 2, image: mockup2, alt: "UniVerse App - Campus Wallet", title: "Your Campus Wallet", subtitle: "All in One Place" },
-    { id: 3, image: mockup3, alt: "UniVerse App - Smart Spending", title: "Smart Spending", subtitle: "Transparent Tracking" },
-    { id: 4, image: mockup4, alt: "UniVerse App - Monthly Tracking", title: "Track & Analyse", subtitle: "Take Control of Your Monthly Spending" },
-    { id: 5, image: mockup5, alt: "UniVerse App - Student Deals", title: "Exclusive Student Deals", subtitle: "Save more every day" },
-    { id: 6, image: mockup6, alt: "UniVerse App - Subscription Management", title: "Never Forget Subscriptions", subtitle: "Track, manage, and stay ahead" },
-    { id: 7, image: mockup7, alt: "UniVerse App - Bank Connection", title: "Connect Your Bank", subtitle: "Unlock student-only rewards" },
-    { id: 8, image: mockup8, alt: "UniVerse App - Promo Codes", title: "Student Promo Codes", subtitle: "Claim exclusive codes and save instantly" },
-    { id: 9, image: mockup9, alt: "UniVerse App - Fund Transfers", title: "Seamless Transfers", subtitle: "Move Funds to Your UniVerse Wallet in Seconds" },
+    { id: 1, image: "/images/mockup/1.png", alt: "UniVerse App - Welcome", title: "Welcome to UniVerse", subtitle: "Your Smart Campus Wallet" },
+    { id: 2, image: "/images/mockup/2.png", alt: "UniVerse App - Campus Wallet", title: "Your Campus Wallet", subtitle: "All in One Place" },
+    { id: 3, image: "/images/mockup/3.png", alt: "UniVerse App - Smart Spending", title: "Smart Spending", subtitle: "Transparent Tracking" },
+    { id: 4, image: "/images/mockup/4.png", alt: "UniVerse App - Monthly Tracking", title: "Track & Analyse", subtitle: "Take Control of Your Monthly Spending" },
+    { id: 5, image: "/images/mockup/5.png", alt: "UniVerse App - Student Deals", title: "Exclusive Student Deals", subtitle: "Save more every day" },
+    { id: 6, image: "/images/mockup/6.png", alt: "UniVerse App - Subscription Management", title: "Never Forget Subscriptions", subtitle: "Track, manage, and stay ahead" },
+    { id: 7, image: "/images/mockup/7.png", alt: "UniVerse App - Bank Connection", title: "Connect Your Bank", subtitle: "Unlock student-only rewards" },
+    { id: 8, image: "/images/mockup/8.png", alt: "UniVerse App - Promo Codes", title: "Student Promo Codes", subtitle: "Claim exclusive codes and save instantly" },
+    { id: 9, image: "/images/mockup/9.png", alt: "UniVerse App - Fund Transfers", title: "Seamless Transfers", subtitle: "Move Funds to Your UniVerse Wallet in Seconds" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (mockups.length > 1) {
@@ -110,7 +108,7 @@ const MockupCarousel = () => {
                       key={mockup.id}
                       className="absolute transition-all duration-1000 ease-out"
                       style={{
-                        transform: window.innerWidth <= 768 ?
+                        transform: isMounted && window.innerWidth <= 768 ?
                           (isPrev ? 'translateX(150px) translateY(25px) scale(0.75) rotate(10deg)' :
                            isNext ? 'translateX(-150px) translateY(25px) scale(0.75) rotate(-10deg)' :
                            'translateX(0px) translateY(-25px) scale(1)') : transform,

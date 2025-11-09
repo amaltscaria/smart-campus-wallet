@@ -3,9 +3,9 @@ import React from 'react';
 
 const References = () => {
   return (
-    <section id="references" className="py-20 bg-gray-50">
+    <section id="references" className="py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-10 text-center">References</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center text-white">References</h2>
         <div className="bg-white rounded-lg shadow-lg p-8">
           <p className="text-gray-700 mb-6">The following sources were referenced during this project:</p>
           

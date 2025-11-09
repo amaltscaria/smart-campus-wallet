@@ -1,8 +1,7 @@
+'use client';
+
 // src/components/DesignProcess/Testing.jsx
 import React, { useState, useEffect } from 'react';
-import guerrillaTestImage from '../../assets/images/test/Arun Tharappel Scaria - Guerrilla Test.jpg';
-import innovationRoadmapImage from '../../assets/images/other/Arun Tharappel Scaria - Innovation Roadmap-2.jpg';
-import swotAnalysisImage from '../../assets/images/other/Arun Tharappel Scaria - SWOT Analysis.jpg';
 
 const Testing = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -12,14 +11,14 @@ const Testing = () => {
   const analysisSlides = [
     {
       id: 1,
-      image: swotAnalysisImage,
+      image: "/images/other/Arun Tharappel Scaria - SWOT Analysis.jpg",
       title: "SWOT Analysis",
       alt: "SWOT Analysis",
       description: "To evaluate the overall design solution, I conducted a SWOT analysis examining the strengths, weaknesses, opportunities, and threats of the proposed design."
     },
     {
       id: 2,
-      image: innovationRoadmapImage,
+      image: "/images/other/Arun Tharappel Scaria - Innovation Roadmap-2.jpg",
       title: "Innovation Roadmap",
       alt: "Innovation Roadmap",
       description: "Looking beyond the current iteration, I developed an innovation roadmap outlining potential future enhancements and features. This strategic planning helps ensure the design can evolve to meet changing user needs over time."
@@ -42,19 +41,19 @@ const Testing = () => {
 
   return (
     <div className="mb-16">
-      <h3 className="text-2xl font-bold mb-6 text-center">Testing</h3>
+      <h3 className="text-2xl font-bold mb-6 text-center text-white">Testing</h3>
       
       {/* Guerrilla Testing */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h4 className="text-xl font-semibold mb-4">Guerrilla Testing</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="relative group">
             <div className="h-[500px] flex items-center justify-center bg-transparent rounded-lg">
               <img
-                src={guerrillaTestImage}
+                src="/images/test/Arun Tharappel Scaria - Guerrilla Test.jpg"
                 alt="Guerrilla Testing Session"
                 className="rounded-lg shadow-sm max-w-full max-h-full object-contain cursor-pointer hover:scale-105 transition-all duration-1200 ease-in-out"
-                onClick={() => setSelectedImage({ src: guerrillaTestImage, alt: "Guerrilla Testing Session" })}
+                onClick={() => setSelectedImage({ src: "/images/test/Arun Tharappel Scaria - Guerrilla Test.jpg", alt: "Guerrilla Testing Session" })}
               />
             </div>
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
@@ -97,7 +96,7 @@ const Testing = () => {
       </div>
       
       {/* Testing Results */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h4 className="text-xl font-semibold mb-4">Testing Results</h4>
         <p className="text-gray-700 mb-6">
           The testing phase revealed several key insights that informed further iterations of the design.
@@ -140,7 +139,7 @@ const Testing = () => {
       </div>
       
       {/* Design Iteration */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out">
+      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h4 className="text-xl font-semibold mb-4">Design Iteration</h4>
         <p className="text-gray-700 mb-6">
           Based on testing feedback, I made several iterations to the design to address user pain points
